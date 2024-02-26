@@ -20,7 +20,7 @@ class BlogItemDetails extends Component {
     const {match} = this.props
     const {params} = match
     const {id} = params
-    const response = await fetch(`https://apis.ccbp.in/blogs/:${id}`)
+    const response = await fetch(`https://apis.ccbp.in/blogs/${id}`)
     const data = await response.json()
     const updatedData = {
       id: data.id,
@@ -43,9 +43,9 @@ class BlogItemDetails extends Component {
     return (
       <div className="flex-container-2">
         <p className="main-title">{title}</p>
-        <div>
+        <div className="flex-container">
           <img src={avatarUrl} className="avatar-image-url" alt="" />
-          <p>{author}</p>
+          <p className="author-text">{author}</p>
         </div>
         <img src={imageUrl} className="main-image-url" alt="" />
         <p className="paragraph-text">{content}</p>
